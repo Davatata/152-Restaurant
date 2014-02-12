@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.view.Menu;
 
 // this is a test
-// dav test
+// new test
 
 public class MainActivity extends Activity {
 
