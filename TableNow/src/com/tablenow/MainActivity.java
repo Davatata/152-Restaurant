@@ -4,8 +4,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 
-// this is a test
-// new test
+//test for john
 
 public class MainActivity extends Activity {
 	
