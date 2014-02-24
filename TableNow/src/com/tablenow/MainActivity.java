@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.view.Menu;
 
 //test for john
-
+// i hate git in general
 public class MainActivity extends Activity {
 	
 	
