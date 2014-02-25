@@ -54,4 +54,24 @@
         android:layout_marginTop="16dp"
         android:text="@string/remember_me" />
 
+    <Button
+        android:id="@+id/Restaurant"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:onClick="to_restaurant"
+        android:text="@string/restaurant" />
+
+    <Button
+        android:id="@+id/User"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/Restaurant"
+        android:onClick="to_user"
+        android:text="@string/user" />
+
 </RelativeLayout>

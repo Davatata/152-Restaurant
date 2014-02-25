@@ -1,8 +1,10 @@
 package com.tablenow;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 
 //test for john
 // i hate git in general
@@ -21,6 +23,14 @@ public class MainActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+	}
+	
+	public void to_restaurant(View V){
+		startActivity(new Intent(MainActivity.this, Restaurant.class));
+	}
+	
+	public void to_user(View V){
+		startActivity(new Intent(MainActivity.this, User.class));
 	}
 
 }
