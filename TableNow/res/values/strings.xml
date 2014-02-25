@@ -11,5 +11,8 @@
     <string name="user">User</string>
     <string name="title_activity_restaurant">Restaurant</string>
     <string name="title_activity_user">User</string>
+    <string name="title_activity_user_search">UserSearch</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_user_layout">UserLayout</string>
 
 </resources>

@@ -38,6 +38,30 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.tablenow.MainActivity" />
         </activity>
+        <activity
+            android:name="com.tablenow.UserSearch"
+            android:label="@string/title_activity_user_search"
+            android:parentActivityName="com.tablenow.User" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tablenow.User" />
+        </activity>
+        <activity
+            android:name="com.tablenow.UserSettings"
+            android:label="@string/title_activity_user_settings"
+            android:parentActivityName="com.tablenow.User" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tablenow.User" />
+        </activity>
+        <activity
+            android:name="com.tablenow.UserLayout"
+            android:label="@string/title_activity_user_layout"
+            android:parentActivityName="com.tablenow.User" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tablenow.User" />
+        </activity>
     </application>
 
 </manifest>
