@@ -55,16 +55,6 @@
         android:text="@string/remember_me" />
 
     <Button
-        android:id="@+id/Restaurant"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:onClick="to_restaurant"
-        android:text="@string/restaurant" />
-
-    <Button
         android:id="@+id/User"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
@@ -73,5 +63,33 @@
         android:layout_alignTop="@+id/Restaurant"
         android:onClick="to_user"
         android:text="@string/user" />
+
+    <Button
+        android:id="@+id/Restaurant"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="to_restaurant"
+        android:text="@string/restaurant" />
+
+    <Button
+        android:id="@+id/signUpButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/sign_up" />
+
+    <Button
+        android:id="@+id/logInButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/signUpButton"
+        android:text="@string/log_in" />
 
 </RelativeLayout>

@@ -62,6 +62,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.tablenow.User" />
         </activity>
+        <activity
+            android:name="com.tablenow.Sign_up"
+            android:label="@string/title_activity_sign_up"
+            android:parentActivityName="com.tablenow.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tablenow.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
