@@ -8,4 +8,45 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Sign_up" >
 
+    <EditText
+        android:id="@+id/first_name_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="84dp"
+        android:ems="10"
+        android:text="@string/First_Name" />
+
+    <EditText
+        android:id="@+id/last_name_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/first_name_editText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:text="@string/Last_Name" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/password_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:text="@string/Password" />
+
+    <EditText
+        android:id="@+id/email_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/password_editText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="@string/Email" />
+
 </RelativeLayout>
