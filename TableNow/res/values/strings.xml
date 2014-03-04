@@ -11,6 +11,8 @@
     <string name="restaurant">Restaurant</string>
     <string name="user">User</string>
     <string name="Editor">Editor</string>
+    <string name="Search_button">Search</string>
+    <string name="Search_text">Search:</string>
     <string name="title_activity_restaurant">Restaurant</string>
     <string name="title_activity_user">User</string>
     <string name="title_activity_user_search">UserSearch</string>
