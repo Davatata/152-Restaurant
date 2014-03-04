@@ -25,6 +25,10 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
+	public void to_signUp(View V){
+		startActivity(new Intent(MainActivity.this, Sign_up.class));
+	}
+	
 	public void to_restaurant(View V){
 		startActivity(new Intent(MainActivity.this, Restaurant.class));
 	}
