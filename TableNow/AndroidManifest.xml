@@ -70,6 +70,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.tablenow.MainActivity" />
         </activity>
+        <activity
+            android:name="com.tablenow.Editor"
+            android:label="@string/title_activity_editor"
+            android:parentActivityName="com.tablenow.Restaurant" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tablenow.Restaurant" />
+        </activity>
     </application>
 
 </manifest>

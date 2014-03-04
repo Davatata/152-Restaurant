@@ -10,11 +10,13 @@
     <string name="remember_me">Remember me </string>
     <string name="restaurant">Restaurant</string>
     <string name="user">User</string>
+    <string name="Editor">Editor</string>
     <string name="title_activity_restaurant">Restaurant</string>
     <string name="title_activity_user">User</string>
     <string name="title_activity_user_search">UserSearch</string>
     <string name="title_activity_user_layout">UserLayout</string>
     <string name="title_activity_sign_up">Sign_up</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_editor">Editor</string>
 
 </resources>
