@@ -12,8 +12,9 @@
         android:id="@+id/first_name_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/join_button"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignRight="@+id/last_name_editText"
         android:layout_marginTop="84dp"
         android:ems="10"
         android:text="@string/First_Name" />
@@ -22,8 +23,9 @@
         android:id="@+id/last_name_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/join_button"
+        android:layout_alignRight="@+id/email_editText"
         android:layout_below="@+id/first_name_editText"
-        android:layout_centerHorizontal="true"
         android:ems="10"
         android:text="@string/Last_Name" >
 
@@ -31,31 +33,68 @@
     </EditText>
 
     <EditText
-        android:id="@+id/password_editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:text="@string/Password" />
-
-    <EditText
         android:id="@+id/email_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/password_editText"
-        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@+id/join_button"
+        android:layout_alignRight="@+id/password_editText"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:text="@string/Email" />
+
+    <EditText
+        android:id="@+id/password_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/join_button"
+        android:layout_alignLeft="@+id/join_button"
+        android:layout_alignRight="@+id/join_button"
+        android:layout_marginBottom="36dp"
+        android:ems="10"
+        android:text="@string/Password" />
+
+    <TextView
+        android:id="@+id/usernameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/last_name_editText"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
+        android:text="First Name:" />
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/password_editText"
+        android:layout_alignRight="@+id/usernameTextView"
+        android:text="Password:" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/password_editText"
+        android:layout_alignLeft="@+id/TextView03"
+        android:text="Email:" />
 
     <Button
         android:id="@+id/join_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/password_editText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="79dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="114dp"
+        android:layout_marginLeft="56dp"
+        android:layout_toRightOf="@+id/TextView03"
         android:text="@string/Join" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/last_name_editText"
+        android:layout_alignLeft="@+id/TextView02"
+        android:text="Last Name:" />
 
 </RelativeLayout>
