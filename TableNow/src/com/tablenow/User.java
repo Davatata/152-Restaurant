@@ -9,16 +9,25 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 public class User extends Activity {
 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_user);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		
+		Spinner dropdown = (Spinner)findViewById(R.id.settings_spinner_u);
+		String[] items = new String[] {"Settings", "Log Out", "Update Info"};
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(User.this, android.R.layout.simple_spinner_item, items);		
+		dropdown.setAdapter(adapter);
 	}
+	
 
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.
