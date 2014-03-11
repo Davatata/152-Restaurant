@@ -3,14 +3,12 @@
 
     <string name="app_name">TableNow</string>
     <string name="action_settings">Settings</string>
-    
     <string name="sign_up">Sign Up</string>
     <string name="First_Name"></string>
     <string name="Last_Name"></string>
     <string name="Email"></string>
     <string name="Password"></string>
     <string name="Join">Join Now!</string>
-    
     <string name="log_in">Log In</string>
     <string name="password">Password: </string>
     <string name="username">Username: </string>
@@ -27,5 +25,8 @@
     <string name="title_activity_sign_up">Sign_up</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_editor">Editor</string>
-    
+    <string name="title_activity_user_results">User_results</string>
+    <string name="title_activity_restaurant_update">Restaurant_update</string>
+    <string name="title_activity_user_update">User_update</string>
+
 </resources>

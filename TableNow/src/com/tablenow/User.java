@@ -40,7 +40,7 @@ public class User extends Activity {
 	}
 	
 	public void to_search(View V){
-		startActivity(new Intent(User.this, UserSearch.class));
+		startActivity(new Intent(User.this, User_results.class));
 	}
 
 	@Override

@@ -78,9 +78,21 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.tablenow.Restaurant" />
         </activity>
+        <activity
+            android:name="com.tablenow.User_results"
+            android:label="@string/title_activity_user_results" >
+        </activity>
+        <activity
+            android:name="com.tablenow.Restaurant_update"
+            android:label="@string/title_activity_restaurant_update" >
+        </activity>
+        <activity
+            android:name="com.tablenow.User_update"
+            android:label="@string/title_activity_user_update" >
+        </activity>
     </application>
-    
-    <!--  Internet Permissions -->
+
+    <!-- Internet Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

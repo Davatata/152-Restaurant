@@ -63,19 +63,24 @@ public final class R {
         public static final int activity_editor=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int activity_restaurant=0x7f030002;
-        public static final int activity_sign_up=0x7f030003;
-        public static final int activity_user=0x7f030004;
-        public static final int activity_user_layout=0x7f030005;
-        public static final int activity_user_search=0x7f030006;
+        public static final int activity_restaurant_update=0x7f030003;
+        public static final int activity_sign_up=0x7f030004;
+        public static final int activity_user=0x7f030005;
+        public static final int activity_user_layout=0x7f030006;
+        public static final int activity_user_results=0x7f030007;
+        public static final int activity_user_update=0x7f030008;
     }
     public static final class menu {
         public static final int editor=0x7f090000;
         public static final int main=0x7f090001;
         public static final int restaurant=0x7f090002;
-        public static final int sign_up=0x7f090003;
-        public static final int user=0x7f090004;
-        public static final int user_layout=0x7f090005;
-        public static final int user_search=0x7f090006;
+        public static final int restaurant_update=0x7f090003;
+        public static final int sign_up=0x7f090004;
+        public static final int user=0x7f090005;
+        public static final int user_layout=0x7f090006;
+        public static final int user_results=0x7f090007;
+        public static final int user_search=0x7f090008;
+        public static final int user_update=0x7f090009;
     }
     public static final class string {
         public static final int Editor=0x7f06000e;
@@ -91,37 +96,40 @@ public final class R {
         public static final int hello_world=0x7f060016;
         public static final int log_in=0x7f060008;
         public static final int password=0x7f060009;
-        public static final int pref_default_display_name=0x7f06001d;
-        public static final int pref_description_social_recommendations=0x7f06001b;
+        public static final int pref_default_display_name=0x7f060020;
+        public static final int pref_description_social_recommendations=0x7f06001e;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f06001f;
+        public static final int pref_header_data_sync=0x7f060022;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f060019;
+        public static final int pref_header_general=0x7f06001c;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f060022;
-        public static final int pref_ringtone_silent=0x7f060025;
-        public static final int pref_title_add_friends_to_messages=0x7f06001e;
-        public static final int pref_title_display_name=0x7f06001c;
-        public static final int pref_title_new_message_notifications=0x7f060023;
-        public static final int pref_title_ringtone=0x7f060024;
-        public static final int pref_title_social_recommendations=0x7f06001a;
-        public static final int pref_title_sync_frequency=0x7f060020;
-        public static final int pref_title_system_sync_settings=0x7f060021;
-        public static final int pref_title_vibrate=0x7f060026;
+        public static final int pref_header_notifications=0x7f060025;
+        public static final int pref_ringtone_silent=0x7f060028;
+        public static final int pref_title_add_friends_to_messages=0x7f060021;
+        public static final int pref_title_display_name=0x7f06001f;
+        public static final int pref_title_new_message_notifications=0x7f060026;
+        public static final int pref_title_ringtone=0x7f060027;
+        public static final int pref_title_social_recommendations=0x7f06001d;
+        public static final int pref_title_sync_frequency=0x7f060023;
+        public static final int pref_title_system_sync_settings=0x7f060024;
+        public static final int pref_title_vibrate=0x7f060029;
         public static final int remember_me=0x7f06000b;
         public static final int restaurant=0x7f06000c;
         public static final int sign_up=0x7f060002;
         public static final int title_activity_editor=0x7f060017;
         public static final int title_activity_restaurant=0x7f060011;
+        public static final int title_activity_restaurant_update=0x7f060019;
         public static final int title_activity_sign_up=0x7f060015;
         public static final int title_activity_user=0x7f060012;
         public static final int title_activity_user_layout=0x7f060014;
+        public static final int title_activity_user_results=0x7f060018;
         public static final int title_activity_user_search=0x7f060013;
-        public static final int title_activity_user_settings=0x7f060018;
+        public static final int title_activity_user_settings=0x7f06001b;
+        public static final int title_activity_user_update=0x7f06001a;
         public static final int user=0x7f06000d;
         public static final int username=0x7f06000a;
     }
