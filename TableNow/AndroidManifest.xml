@@ -56,6 +56,8 @@
         </activity>
         <activity
             android:name="com.tablenow.UserLayout"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+    		android:screenOrientation="landscape"
             android:label="@string/title_activity_user_layout"
             android:parentActivityName="com.tablenow.User" >
             <meta-data
