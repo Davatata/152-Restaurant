@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/last_name_editText"
         android:layout_marginTop="84dp"
-        android:ems="10"
+       android:ems="15"
         android:text="@string/First_Name" />
 
     <EditText
@@ -26,7 +26,7 @@
         android:layout_alignLeft="@+id/join_button"
         android:layout_alignRight="@+id/email_editText"
         android:layout_below="@+id/first_name_editText"
-        android:ems="10"
+        android:ems="15"
         android:text="@string/Last_Name" >
 
         <requestFocus />
@@ -39,7 +39,7 @@
         android:layout_above="@+id/password_editText"
         android:layout_alignLeft="@+id/join_button"
         android:layout_alignRight="@+id/password_editText"
-        android:ems="10"
+        android:ems="15"
         android:inputType="textEmailAddress"
         android:text="@string/Email" />
 
@@ -51,7 +51,7 @@
         android:layout_alignLeft="@+id/join_button"
         android:layout_alignRight="@+id/join_button"
         android:layout_marginBottom="36dp"
-        android:ems="10"
+        android:ems="15"
         android:text="@string/Password" />
 
     <TextView
