@@ -25,6 +25,7 @@
         <activity
             android:name="com.tablenow.Restaurant"
             android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_restaurant"
             android:parentActivityName="com.tablenow.MainActivity" >
             <meta-data
@@ -58,6 +59,7 @@
         <activity
             android:name="com.tablenow.UserLayout"
             android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_user_layout"
             android:parentActivityName="com.tablenow.User" >
             <meta-data
@@ -74,6 +76,8 @@
         </activity>
         <activity
             android:name="com.tablenow.Editor"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_editor"
             android:parentActivityName="com.tablenow.Restaurant" >
             <meta-data
