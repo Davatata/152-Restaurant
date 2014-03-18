@@ -24,6 +24,7 @@
         </activity>
         <activity
             android:name="com.tablenow.Restaurant"
+            android:screenOrientation="landscape"
             android:label="@string/title_activity_restaurant"
             android:parentActivityName="com.tablenow.MainActivity" >
             <meta-data
