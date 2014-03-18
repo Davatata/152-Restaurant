@@ -10,8 +10,11 @@
     <string name="Password"></string>
     <string name="Join">Join Now!</string>
     <string name="log_in">Log In</string>
-    <string name="password">Password: </string>
-    <string name="username">Username: </string>
+    <string name="view_firstname">First name: </string>
+    <string name="view_lastname">Last name: </string>
+    <string name="view_password">Password: </string>
+    <string name="view_username">Username: </string>
+    <string name="view_email">Email: </string>
     <string name="remember_me">Remember me </string>
     <string name="restaurant">Restaurant</string>
     <string name="user">User</string>
@@ -28,5 +31,6 @@
     <string name="title_activity_user_results">User_results</string>
     <string name="title_activity_restaurant_update">Restaurant_update</string>
     <string name="title_activity_user_update">User_update</string>
+    
 
 </resources>
