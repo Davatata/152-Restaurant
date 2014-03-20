@@ -35,7 +35,7 @@ public class Sign_up extends Activity {
     EditText inputPassowrd;
     
 	// url to create new product
-    private static String url_create_User = "http://api.androidhive.info/android_connect/create_product.php";
+    private static String url_create_User = "http://localhost/android_connect/create_product.php";
  
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
@@ -131,10 +131,10 @@ public class Sign_up extends Activity {
  
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
-            params.add(new BasicNameValuePair("FirstName", firstName));
-            params.add(new BasicNameValuePair("LastName", lastName));
-            params.add(new BasicNameValuePair("UserEmail", userEmail));
-            params.add(new BasicNameValuePair("UserPassowrd", userPassword));
+            params.add(new BasicNameValuePair("firstName", firstName));
+            params.add(new BasicNameValuePair("lastName", lastName));
+            params.add(new BasicNameValuePair("userEmail", userEmail));
+            params.add(new BasicNameValuePair("userPassowrd", userPassword));
  
             // getting JSON Object
             // Note that create product url accepts POST method
