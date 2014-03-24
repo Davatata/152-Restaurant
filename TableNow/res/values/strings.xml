@@ -10,6 +10,8 @@
     <string name="Password"></string>
     <string name="Join">Join Now!</string>
     <string name="log_in">Log In</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
     <string name="view_firstname">First name: </string>
     <string name="view_lastname">Last name: </string>
     <string name="view_password">Password: </string>

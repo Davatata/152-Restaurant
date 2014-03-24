@@ -97,4 +97,20 @@
         android:layout_alignLeft="@+id/TextView02"
         android:text="@string/view_lastname" />
 
+    <CheckBox
+        android:id="@+id/checkBox_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/usernameTextView"
+        android:layout_alignLeft="@+id/usernameTextView"
+        android:text="@string/user" />
+
+    <CheckBox
+        android:id="@+id/checkBox_res"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkBox_user"
+        android:layout_alignLeft="@+id/checkBox_user"
+        android:text="@string/restaurant" />
+
 </RelativeLayout>
