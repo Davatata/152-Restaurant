@@ -8,9 +8,100 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Restaurant_update" >
 
-    <TextView
+    <Button
+        android:id="@+id/cancel_button_res"
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/cancel" />
+
+    <Button
+        android:id="@+id/save_button_res"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/cancel_button_res"
+        android:layout_alignBottom="@+id/cancel_button_res"
+        android:layout_alignParentRight="true"
+        android:text="@string/save" />
+
+    <TextView
+        android:id="@+id/image_textView_res"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/name_textView_res"
+        android:layout_below="@+id/name_editText_res"
+        android:text="@string/address" />
+
+    <EditText
+        android:id="@+id/address_editText_res"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_textView_res"
+        android:layout_toRightOf="@+id/name_textView_res"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/name_editText_res"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/save_button_res"
+        android:layout_below="@+id/name_textView_res"
+        android:layout_toRightOf="@+id/name_textView_res"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/address_textView_res"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/image_textView_res"
+        android:layout_below="@+id/address_editText_res"
+        android:layout_marginTop="16dp"
+        android:text="@string/pricing" />
+
+    <TextView
+        android:id="@+id/name_textView_res"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cancel_button_res"
+        android:layout_below="@+id/cancel_button_res"
+        android:layout_marginTop="31dp"
+        android:text="@string/res_name" />
+
+    <TextView
+        android:id="@+id/pricing_textView_res"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/address_textView_res"
+        android:layout_below="@+id/pricing_editText_res"
+        android:layout_marginTop="18dp"
+        android:text="@string/image" />
+
+    <EditText
+        android:id="@+id/pricing_editText_res"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/address_editText_res"
+        android:layout_below="@+id/address_textView_res"
+        android:ems="10" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/pricing_editText_res"
+        android:layout_below="@+id/pricing_textView_res"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_toRightOf="@+id/name_textView_res"
+        android:src="@drawable/default_pic" />
 
 </RelativeLayout>

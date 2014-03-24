@@ -6,6 +6,9 @@
     <string name="sign_up">Sign Up</string>
     <string name="First_Name"></string>
     <string name="Last_Name"></string>
+    <string name="address">Address</string>
+    <string name="pricing">Pricing</string>
+    <string name="image">Image</string>
     <string name="Email"></string>
     <string name="Password"></string>
     <string name="Join">Join Now!</string>
@@ -19,6 +22,7 @@
     <string name="view_email">Email: </string>
     <string name="remember_me">Remember me </string>
     <string name="restaurant">Restaurant</string>
+    <string name="res_name">Restaurant Name</string>
     <string name="user">User</string>
     <string name="Editor">Editor</string>
     <string name="Search_button">Search</string>
