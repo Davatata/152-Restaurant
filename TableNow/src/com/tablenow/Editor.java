@@ -2,20 +2,52 @@ package com.tablenow;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
 import android.os.Build;
 
 public class Editor extends Activity {
 
+	private WebView myview;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_editor);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		
+		String url = "http://www.google.com";
+		myview = (WebView) this.findViewById(R.id.webView1);
+		myview.loadUrl(url);
+		myview.setWebViewClient(new webviewclient());
+	}
+	
+	private class webviewclient extends WebViewClient {
+		@Override
+		public boolean shouldOverrideUrlLoading(WebView webview, String url)
+		{
+			webview.loadUrl(url);
+			return true;
+		}
+		
+	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event)
+	{
+		if((keyCode == KeyEvent.KEYCODE_BACK) && myview.canGoBack())
+		{
+			myview.goBack();
+			return true;
+		}
+		
+		return super.onKeyDown(keyCode, event);
 	}
 
 	/**

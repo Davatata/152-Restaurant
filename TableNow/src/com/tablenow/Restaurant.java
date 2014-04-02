@@ -26,6 +26,7 @@ public class Restaurant extends Activity {
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(Restaurant.this, android.R.layout.simple_spinner_item, items);		
 		dropdown.setAdapter(adapter);
 		
+		
 	}
 
 	/**
