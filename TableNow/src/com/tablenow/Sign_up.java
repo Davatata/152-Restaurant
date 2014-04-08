@@ -35,7 +35,8 @@ public class Sign_up extends Activity {
     EditText inputPassowrd;
     
 	// url to create new product
-    private static String url_create_User = "http://localhost/android_connect/create_product.php";
+    
+    private static String url_create_User = "http://10.0.2.2/android_connect1/create_product.php";
  
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
