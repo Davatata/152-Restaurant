@@ -1,10 +1,10 @@
 <?php
 
 
-define('DB_USER',"root");
-define('DB_PASSWORD',"");
-define ('DB_DATABASE',"152_android_project_database"); //database name
-define ('DB_SERVER', "localhost");
+define('DB_USER',"teamDave");
+define('DB_PASSWORD',"csci152");
+//define ('DB_DATABASE',""); //database name
+define ('DB_SERVER', "98.239.80.190");
 
 ?>
 
