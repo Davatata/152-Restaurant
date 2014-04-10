@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void to_restaurant(View V){
-		startActivity(new Intent(MainActivity.this, Restaurant.class));
+		startActivity(new Intent(MainActivity.this, Editor.class));
 	}
 	
 	public void to_user(View V){
