@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">TableNow</string>
+    <string name="ok">OK</string>
     <string name="action_settings">Settings</string>
     <string name="sign_up">Sign Up</string>
     <string name="First_Name"></string>

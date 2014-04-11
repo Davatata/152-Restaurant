@@ -8,20 +8,24 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.os.AsyncTask;
-import android.os.Bundle;
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
-import android.support.v4.app.NavUtils;
-import android.annotation.TargetApi;
-import android.content.Intent;
-import android.os.Build;
+import android.widget.Toast;
 
 
 public class Sign_up extends Activity {
@@ -33,10 +37,11 @@ public class Sign_up extends Activity {
     EditText inputLastName;
     EditText inputEmail;
     EditText inputPassowrd;
+    String temp = "";
     
 	// url to create new product
     
-    private static String url_create_User = "http://10.0.2.2/android_connect1/create_product.php";
+    private static String url_create_User = "http://api.androidhive.info/android_connect/create_product.php";
  
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
@@ -51,7 +56,7 @@ public class Sign_up extends Activity {
 		inputLastName = (EditText) findViewById(R.id.last_name_editText);
 		inputEmail = (EditText) findViewById(R.id.email_editText);
 		inputPassowrd = (EditText) findViewById(R.id.password_editText);
- 
+		
         // Create button
         Button joinNowBtn = (Button) findViewById(R.id.join_button);
  
@@ -60,8 +65,37 @@ public class Sign_up extends Activity {
  
             @Override
             public void onClick(View view) {
-                // creating new product in background thread
-                new CreateNewUser().execute();
+                // creating new product in background thread         
+            	
+            	if(temp == ""){
+            		AlertDialog.Builder alertDialog2 = new AlertDialog.Builder(
+            		        Sign_up.this);
+
+            		// Setting Dialog Title
+            		alertDialog2.setTitle("Warning");
+
+            		// Setting Dialog Message
+            		alertDialog2.setMessage("Check a box fool!");
+
+            		// Setting Positive "Yes" Btn
+            		alertDialog2.setPositiveButton("OK",
+            		        new DialogInterface.OnClickListener() {
+            		            public void onClick(DialogInterface dialog, int which) {
+            		                // Write your code here to execute after dialog
+            		                Toast.makeText(getApplicationContext(),
+            		                        "You clicked on OK", Toast.LENGTH_SHORT)
+            		                        .show();
+            		            }
+            		        });
+
+            		// Showing Alert Dialog
+            		alertDialog2.show();
+            	}
+            	
+            	else{
+            		new CreateNewUser().execute();
+                    startActivity(new Intent(Sign_up.this, MainActivity.class));            		
+            	}
             }
         });
 		
@@ -69,6 +103,38 @@ public class Sign_up extends Activity {
 		setupActionBar();
 	}
 
+	public void check_res(View view){
+		boolean checked = ((CheckBox) view).isChecked();
+		boolean user_check = ((CheckBox) findViewById(R.id.checkBox_user)).isChecked();
+		if(!checked){
+				((CheckBox) findViewById(R.id.checkBox_res)).setChecked(false);
+				temp = "";
+		}
+		else{
+			if(user_check){
+				((CheckBox) findViewById(R.id.checkBox_user)).setChecked(false);
+			}
+			((CheckBox) view).setChecked(true);
+			temp = "Res";
+		}
+	}
+	
+	public void check_user(View view){
+		boolean checked = ((CheckBox) view).isChecked();
+		boolean res_check = ((CheckBox) findViewById(R.id.checkBox_res)).isChecked();
+		if(!checked){
+				((CheckBox) findViewById(R.id.checkBox_user)).setChecked(false);
+				temp = "";	
+		}
+		else{
+			if(res_check){
+				((CheckBox) findViewById(R.id.checkBox_res)).setChecked(false);
+			}
+			((CheckBox) view).setChecked(true);
+			temp = "User";
+		}
+	}	
+	
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.
 	 */
@@ -123,12 +189,13 @@ public class Sign_up extends Activity {
  
         /**
          * Adding new user
-         * */
+         * */        
         protected String doInBackground(String... args) {
             String firstName = inputFirstName.getText().toString();
             String lastName = inputLastName.getText().toString();
             String userEmail = inputEmail.getText().toString();
             String userPassword = inputPassowrd.getText().toString();
+            String auth = temp;
  
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -136,6 +203,7 @@ public class Sign_up extends Activity {
             params.add(new BasicNameValuePair("lastName", lastName));
             params.add(new BasicNameValuePair("userEmail", userEmail));
             params.add(new BasicNameValuePair("userPassowrd", userPassword));
+            params.add(new BasicNameValuePair("authority", auth));
  
             // getting JSON Object
             // Note that create product url accepts POST method
