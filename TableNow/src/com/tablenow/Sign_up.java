@@ -75,15 +75,15 @@ public class Sign_up extends Activity {
             		alertDialog2.setTitle("Warning");
 
             		// Setting Dialog Message
-            		alertDialog2.setMessage("Check a box fool!");
+            		alertDialog2.setMessage("No Box Checked");
 
-            		// Setting Positive "Yes" Btn
+            		// OK button
             		alertDialog2.setPositiveButton("OK",
             		        new DialogInterface.OnClickListener() {
             		            public void onClick(DialogInterface dialog, int which) {
             		                // Write your code here to execute after dialog
             		                Toast.makeText(getApplicationContext(),
-            		                        "You clicked on OK", Toast.LENGTH_SHORT)
+            		                        "Please Check a Box", Toast.LENGTH_SHORT)
             		                        .show();
             		            }
             		        });
