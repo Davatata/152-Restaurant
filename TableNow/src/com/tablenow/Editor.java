@@ -2,14 +2,17 @@ package com.tablenow;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 
@@ -75,7 +78,37 @@ public class Editor extends Activity {
 	    // Handle presses on the action bar items
 	    switch (item.getItemId()) {
 	        case R.id.action_sign_out:
-	        	startActivity(new Intent(Editor.this, MainActivity.class));
+	        	AlertDialog.Builder alertDialog2 = new AlertDialog.Builder(
+        		        Editor.this);
+
+        		// Setting Dialog Title
+        		alertDialog2.setTitle("Warning");
+
+        		// Setting Dialog Message
+        		alertDialog2.setMessage("Are You Sure You Want To Sign Out?");
+
+        		// yes button
+        		alertDialog2.setPositiveButton("Yes",
+        		        new DialogInterface.OnClickListener() {
+        		            public void onClick(DialogInterface dialog, int which) {
+        		                // Write your code here to execute after dialog
+        		                Toast.makeText(getApplicationContext(),
+        		                        "You Have Signed Out", Toast.LENGTH_SHORT)
+        		                        .show();
+        		                startActivity(new Intent(Editor.this, MainActivity.class));
+        		            }
+        		        });
+        		
+        		// no button
+        		alertDialog2.setNegativeButton("No", 
+        				new DialogInterface.OnClickListener() {
+        					public void onClick(DialogInterface dialog, int which) {
+        						dialog.cancel();
+        			}
+        		});
+
+        		// Showing Alert Dialog
+        		alertDialog2.show();
 	            return true;
 	        case R.id.action_settings:
 	        	startActivity(new Intent(Editor.this, User_update.class));
