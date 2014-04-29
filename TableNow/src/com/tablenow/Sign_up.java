@@ -1,5 +1,11 @@
 package com.tablenow;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +46,7 @@ public class Sign_up extends Activity {
     
 	// url to create new product
     
-    private static String url_create_User = "http://50.161.166.152/restauraunt/create_product.php";
+    private static String url_create_User = "http://50.161.166.152/Restaurant/create_product.php";
  
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
@@ -92,6 +98,7 @@ public class Sign_up extends Activity {
             	}
             	
             	else{
+            		
             		new CreateNewUser().execute();
                     startActivity(new Intent(Sign_up.this, MainActivity.class));            		
             	}
@@ -196,6 +203,49 @@ public class Sign_up extends Activity {
             String userPassword = inputPassowrd.getText().toString();
             String auth = temp;
  
+           
+            String response = "";
+            BufferedReader reader;
+            try
+            {
+            	String data = URLEncoder.encode("firstName", "UTF-8") + "=" + URLEncoder.encode(firstName, "UTF-8");
+            	data += "&" + URLEncoder.encode("lastName", "UTF-8") + "=" + URLEncoder.encode(lastName, "UTF-8");
+            	data += "&" + URLEncoder.encode("userEmail", "UTF-8") + "=" + URLEncoder.encode(userEmail, "UTF-8");
+            	data += "&" + URLEncoder.encode("userPassword", "UTF-8") + "=" + URLEncoder.encode(userPassword, "UTF-8");
+            	
+            	
+            	URL url = new URL(url_create_User);
+            	URLConnection con = url.openConnection();
+            	con.setDoOutput(true);
+            	OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
+            	writer.write(data);
+            	writer.flush();
+            	
+            	//get response from server
+            	
+                reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            	StringBuilder sb = new StringBuilder();
+            	String line = "";
+            	
+            	while ((line = reader.readLine()) != null)
+            	{
+            		sb.append(line + "\n");
+            	}
+            	
+                response = sb.toString();
+                reader.close();
+            	
+            }
+            
+            catch (Exception ex)
+            {
+            	Log.e("Error", ex.toString());
+            }
+            
+            
+           
+          
+            /*
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("firstName", firstName));
@@ -233,7 +283,10 @@ public class Sign_up extends Activity {
                 e.printStackTrace();
             }
  
-            return null;
+            return null;*/
+            
+            Log.e("Response", response);
+            return response;
         }
         
         /**
