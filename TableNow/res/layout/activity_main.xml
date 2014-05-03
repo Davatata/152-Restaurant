@@ -9,50 +9,14 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/passwordTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/usernameTextView"
-        android:layout_below="@+id/usernameTextView"
-        android:layout_marginTop="29dp"
-        android:text="@string/view_password" />
-
-    <EditText
-        android:id="@+id/passwordEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/passwordTextView"
-        android:layout_marginLeft="16dp"
-        android:layout_toRightOf="@+id/passwordTextView"
-        android:ems="10"
-        android:inputType="textPassword" />
-
-    <EditText
-        android:id="@+id/usernameEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/passwordEditText"
-        android:layout_alignLeft="@+id/passwordEditText"
-        android:ems="10" />
-
-    <TextView
-        android:id="@+id/usernameTextView"
+        android:id="@+id/EmailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="11dp"
         android:layout_marginTop="191dp"
-        android:text="@string/view_username" />
-
-    <CheckBox
-        android:id="@+id/checkBox_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/usernameTextView"
-        android:layout_below="@+id/passwordTextView"
-        android:layout_marginTop="16dp"
-        android:text="@string/remember_me" />
+        android:text="@string/view_email" />
 
     <Button
         android:id="@+id/User"
@@ -92,5 +56,40 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/signUpButton"
         android:text="@string/log_in" />
+
+    <CheckBox
+        android:id="@+id/checkBox_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/EmailTextView"
+        android:layout_below="@+id/passwordTextView"
+        android:layout_marginTop="35dp"
+        android:text="@string/remember_me" />
+
+    <TextView
+        android:id="@+id/passwordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/signUpButton"
+        android:layout_below="@+id/EmailTextView"
+        android:layout_marginTop="40dp"
+        android:text="@string/view_password" />
+
+    <EditText
+        android:id="@+id/EmailEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/passwordEditText"
+        android:layout_centerVertical="true"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/logInButton"
+        android:layout_alignTop="@+id/passwordTextView"
+        android:ems="10"
+        android:inputType="textPassword" />
 
 </RelativeLayout>

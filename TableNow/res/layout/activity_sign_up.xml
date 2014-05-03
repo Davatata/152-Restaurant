@@ -55,7 +55,7 @@
         android:text="@string/Password" />
 
     <TextView
-        android:id="@+id/usernameTextView"
+        android:id="@+id/EmailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/last_name_editText"
@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/password_editText"
-        android:layout_alignRight="@+id/usernameTextView"
+        android:layout_alignRight="@+id/EmailTextView"
         android:text="@string/view_password" />
 
     <TextView
@@ -111,8 +111,8 @@
         android:onClick="check_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/usernameTextView"
-        android:layout_alignLeft="@+id/usernameTextView"
+        android:layout_above="@+id/EmailTextView"
+        android:layout_alignLeft="@+id/EmailTextView"
         android:layout_marginBottom="40dp"
         android:text="@string/user" />
 
