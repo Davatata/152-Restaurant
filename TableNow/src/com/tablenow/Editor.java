@@ -22,7 +22,7 @@ public class Editor extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 		
-		String url = "http://www.google.com";
+		String url = "http://50.161.166.152/restaurant/pages/restaurant.html";
 		myview = (WebView) this.findViewById(R.id.webView1);
 		myview.loadUrl(url);
 		myview.setWebViewClient(new webviewclient());
