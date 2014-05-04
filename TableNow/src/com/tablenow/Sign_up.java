@@ -42,6 +42,7 @@ public class Sign_up extends Activity {
     EditText inputLastName;
     EditText inputEmail;
     EditText inputPassowrd;
+    String inputAuth;
     String temp = "";
     
 	// url to create new product
@@ -97,10 +98,17 @@ public class Sign_up extends Activity {
             		alertDialog2.show();
             	}
             	
-            	else{
-            		
+            	else if(temp.equals("Res")){
+            		inputAuth = "Res";
             		new CreateNewUser().execute();
                     startActivity(new Intent(Sign_up.this, MainActivity.class));            		
+            	}
+            	
+            	else
+            	{
+            		inputAuth = "User";
+            		new CreateNewUser().execute();
+            		startActivity(new Intent(Sign_up.this, MainActivity.class));
             	}
             }
         });
@@ -122,6 +130,8 @@ public class Sign_up extends Activity {
 			}
 			((CheckBox) view).setChecked(true);
 			temp = "Res";
+			
+			
 		}
 	}
 	
@@ -138,6 +148,8 @@ public class Sign_up extends Activity {
 			}
 			((CheckBox) view).setChecked(true);
 			temp = "User";
+			
+			
 		}
 	}	
 	
@@ -201,8 +213,8 @@ public class Sign_up extends Activity {
             String lastName = inputLastName.getText().toString();
             String userEmail = inputEmail.getText().toString();
             String userPassword = inputPassowrd.getText().toString();
-            String auth = temp;
- 
+            
+           
            
             String response = "";
             BufferedReader reader;
@@ -212,6 +224,7 @@ public class Sign_up extends Activity {
             	data += "&" + URLEncoder.encode("lastName", "UTF-8") + "=" + URLEncoder.encode(lastName, "UTF-8");
             	data += "&" + URLEncoder.encode("userEmail", "UTF-8") + "=" + URLEncoder.encode(userEmail, "UTF-8");
             	data += "&" + URLEncoder.encode("userPassword", "UTF-8") + "=" + URLEncoder.encode(userPassword, "UTF-8");
+            	
             	
             	
             	URL url = new URL(url_create_User);

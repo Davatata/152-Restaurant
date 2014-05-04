@@ -41,12 +41,15 @@ public class login extends Activity {
 	
 	
 	
-private ProgressDialog pDialog;
+		private ProgressDialog pDialog;
 	 
 	    JSONParser jsonParser = new JSONParser();
 	    EditText inputEmail;
 	    EditText inputPassword;
 	    String temp = "";
+	    String auth = "";
+	    
+	    
 	    
 	    private static String url_create_User = "http://50.161.166.152/Restaurant/check_login.php";
 	   
@@ -64,20 +67,65 @@ private ProgressDialog pDialog;
 			
 			loginButton.setOnClickListener(new View.OnClickListener() {
 				 
-	            @Override
-	            public void onClick(View view) {
-	                // creating new product in background thread  
-	            	
-	            	new login_User().execute();
-                    startActivity(new Intent(login.this, MainActivity.class));  
-	            	
-	         
-	            }
-	        });
-			
-			
+				 @Override
+		            public void onClick(View view) {
+		                // creating new product in background thread  
+					 
+					 	new login_User().execute();
+			             
+		            	
+		            	if(temp.equals("res") && auth.equals("yes")){
+		            		
+		            		startActivity(new Intent(login.this,Editor.class));
+		            	}
+		            	
+		            	else if(temp.equals("user") && auth.equals("yes"))
+		            	{
+		            		startActivity(new Intent(login.this,User.class));
+		            	}
+		            	
+		            	else{
+		            		
+		            		AlertDialog.Builder alertDialog1 = new AlertDialog.Builder(
+		            		        login.this);
 
-	    }
+		            		// Setting Dialog Title
+		            		alertDialog1.setTitle("Error");
+
+		            		// Setting Dialog Message
+		            		alertDialog1.setMessage("log in unsuccessful");
+
+		            		// Setting Positive "Yes" Btn
+		            		alertDialog1.setPositiveButton("OK",
+		            		        new DialogInterface.OnClickListener() {
+		            		            public void onClick(DialogInterface dialog, int which) {
+		            		                // Write your code here to execute after dialog
+		            		                Toast.makeText(getApplicationContext(),
+		            		                        "You clicked on OK", Toast.LENGTH_SHORT)
+		            		                        .show();
+		            		            }
+		            		        });
+
+		            		// Showing Alert Dialog
+		            		alertDialog1.show();
+		            		startActivity(new Intent(login.this, MainActivity.class));
+		            		
+		            	}
+		            
+		           
+		            
+	            
+				
+				
+	            }
+				 
+			});
+			
+		}
+	    
+
+	       
+		
 	    
 	    class login_User  extends AsyncTask<String, String, String>
 	    {
@@ -109,6 +157,8 @@ private ProgressDialog pDialog;
 	            String response = "";
 	            BufferedReader reader;
 	            
+	           
+	            
 	            try{
 	            	
 	            	String data = URLEncoder.encode("userEmail", "UTF-8") + "=" + URLEncoder.encode(userEmail, "UTF-8");
@@ -137,12 +187,41 @@ private ProgressDialog pDialog;
 	            	
 	            }
 	            
+	            
 	            catch (Exception ex)
 	            {
 	            	Log.e("Error", ex.toString());
 	            }
+	            
+	            System.out.println(response);
+	            
+	            
+	            	
+	            List<NameValuePair> params = new ArrayList<NameValuePair>();
+	            JSONObject json = jsonParser.makeHttpRequest(url_create_User,"POST",params);
+	            Log.d("All Products: ",json.toString());
+	            
+	            try
+	            {
+	            	int success = json.getInt(TAG_SUCCESS);
+	            	
+	            	if(success ==1)
+	            	{
+	            		auth = "yes";
+	            	}
+	            	
+	            	else
+	            	{
+	            		auth = "no";
+	            	}
 	            	
 	            	
+	            }
+	            
+	            catch (JSONException e)
+	            {
+	            	e.printStackTrace();
+	            }
 	            
 	            
 				
