@@ -26,6 +26,7 @@ public class Editor extends Activity {
 		myview = (WebView) this.findViewById(R.id.webView1);
 		myview.loadUrl(url);
 		myview.setWebViewClient(new webviewclient());
+		myview.getSettings().setJavaScriptEnabled(true);
 	}
 	
 	private class webviewclient extends WebViewClient {
