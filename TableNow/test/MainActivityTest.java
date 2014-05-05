@@ -12,9 +12,11 @@ import static org.junit.Assert.assertThat;
 import android.content.Intent;
 import android.widget.Button;
 
+import com.tablenow.Editor;
 import com.tablenow.MainActivity;
 import com.tablenow.R;
 import com.tablenow.Sign_up;
+import com.tablenow.User;
 
 
 
@@ -22,7 +24,7 @@ import com.tablenow.Sign_up;
 public class MainActivityTest {
 
 	  @Test
-	  public void clickingButton_shouldChangeResultsViewText() throws Exception {
+	  public void clickingButton_shouldChangeToSigUpActivity() throws Exception {
 	    MainActivity activity = Robolectric.buildActivity(MainActivity.class).create().get();
 
 	    Button pressMeButton = (Button) activity.findViewById(R.id.signUpButton);
@@ -33,5 +35,33 @@ public class MainActivityTest {
         Intent startedIntent = shadowActivity.getNextStartedActivity();
         ShadowIntent shadowIntent = Robolectric.shadowOf(startedIntent);
 	    assertThat(shadowIntent.getComponent().getClassName(), equalTo(Sign_up.class.getName()));
+	  }
+	  
+	  @Test
+	  public void clickingButton_shouldChangeEditorActivity() throws Exception {
+	    MainActivity activity = Robolectric.buildActivity(MainActivity.class).create().get();
+
+	    Button pressMeRestaurantButton = (Button) activity.findViewById(R.id.Restaurant);
+
+	    pressMeRestaurantButton.performClick();
+	    
+	    ShadowActivity shadowActivity = Robolectric.shadowOf(activity);
+        Intent startedIntent = shadowActivity.getNextStartedActivity();
+        ShadowIntent shadowIntent = Robolectric.shadowOf(startedIntent);
+	    assertThat(shadowIntent.getComponent().getClassName(), equalTo(Editor.class.getName()));
+	  }
+	  
+	  @Test
+	  public void clickingButton_shouldChangeUserActivity() throws Exception {
+	    MainActivity activity = Robolectric.buildActivity(MainActivity.class).create().get();
+
+	    Button pressMeUserButton = (Button) activity.findViewById(R.id.User);
+
+	    pressMeUserButton.performClick();
+	    
+	    ShadowActivity shadowActivity = Robolectric.shadowOf(activity);
+        Intent startedIntent = shadowActivity.getNextStartedActivity();
+        ShadowIntent shadowIntent = Robolectric.shadowOf(startedIntent);
+	    assertThat(shadowIntent.getComponent().getClassName(), equalTo(User.class.getName()));
 	  }
 }
