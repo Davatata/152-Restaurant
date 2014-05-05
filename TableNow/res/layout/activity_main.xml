@@ -55,7 +55,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/signUpButton"
-        android:text="@string/log_in" />
+        android:text="@string/log_in"
+        android:onClick="login" />
 
     <CheckBox
         android:id="@+id/checkBox_user"
