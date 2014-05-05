@@ -1,5 +1,7 @@
 package com.tablenow;
 
+//import com.tablenow.Editor.webviewclient;
+
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -7,12 +9,17 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 public class UserLayout extends Activity {
+	
+	private WebView myview2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +27,34 @@ public class UserLayout extends Activity {
 		setContentView(R.layout.activity_user_layout);
 		// Show the Up button in the action bar.
 		setupActionBar();
+
+		String url = "http://50.161.166.152/restaurant/pages/restaurant.html";
+		myview2 = (WebView) this.findViewById(R.id.webView2);
+		myview2.loadUrl(url);
+		myview2.setWebViewClient(new webviewclient());
+		myview2.getSettings().setJavaScriptEnabled(true);
+	}
+	
+	private class webviewclient extends WebViewClient {
+		@Override
+		public boolean shouldOverrideUrlLoading(WebView webview, String url)
+		{
+			webview.loadUrl(url);
+			return true;
+		}
+		
+	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event)
+	{
+		if((keyCode == KeyEvent.KEYCODE_BACK) && myview2.canGoBack())
+		{
+			myview2.goBack();
+			return true;
+		}
+		
+		return super.onKeyDown(keyCode, event);
 	}
 
 	/**

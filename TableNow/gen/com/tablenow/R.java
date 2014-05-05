@@ -39,19 +39,19 @@ public final class R {
         public static final int TextView02=0x7f0a001b;
         public static final int TextView03=0x7f0a001a;
         public static final int User=0x7f0a0002;
-        public static final int action_settings=0x7f0a002f;
-        public static final int action_sign_out=0x7f0a002e;
+        public static final int action_settings=0x7f0a0030;
+        public static final int action_sign_out=0x7f0a002f;
         public static final int address_editText_res=0x7f0a000f;
         public static final int address_textView_res=0x7f0a0010;
-        public static final int button1=0x7f0a0022;
-        public static final int button2=0x7f0a0021;
+        public static final int button1=0x7f0a0023;
+        public static final int button2=0x7f0a0022;
         public static final int cancel_button_res=0x7f0a000a;
         public static final int checkBox_res=0x7f0a001d;
         public static final int checkBox_user=0x7f0a0006;
-        public static final int editText1=0x7f0a0024;
-        public static final int editText2=0x7f0a0027;
-        public static final int editText3=0x7f0a002d;
-        public static final int editText4=0x7f0a002b;
+        public static final int editText1=0x7f0a0025;
+        public static final int editText2=0x7f0a0028;
+        public static final int editText3=0x7f0a002e;
+        public static final int editText4=0x7f0a002c;
         public static final int email_editText=0x7f0a0018;
         public static final int first_name_editText=0x7f0a0015;
         public static final int imageView1=0x7f0a0014;
@@ -59,9 +59,9 @@ public final class R {
         public static final int join_button=0x7f0a0016;
         public static final int last_name_editText=0x7f0a0017;
         public static final int linearLayout1=0x7f0a0013;
-        public static final int linearLayout2=0x7f0a0025;
-        public static final int linearLayout3=0x7f0a0029;
-        public static final int linearLayout4=0x7f0a0028;
+        public static final int linearLayout2=0x7f0a0026;
+        public static final int linearLayout3=0x7f0a002a;
+        public static final int linearLayout4=0x7f0a0029;
         public static final int logInButton=0x7f0a0005;
         public static final int name_editText_res=0x7f0a000e;
         public static final int name_textView_res=0x7f0a000d;
@@ -75,11 +75,12 @@ public final class R {
         public static final int search_editText=0x7f0a001e;
         public static final int search_textView=0x7f0a001f;
         public static final int signUpButton=0x7f0a0004;
-        public static final int textView1=0x7f0a0023;
-        public static final int textView2=0x7f0a0026;
-        public static final int textView3=0x7f0a002c;
-        public static final int textView4=0x7f0a002a;
+        public static final int textView1=0x7f0a0024;
+        public static final int textView2=0x7f0a0027;
+        public static final int textView3=0x7f0a002d;
+        public static final int textView4=0x7f0a002b;
         public static final int webView1=0x7f0a0000;
+        public static final int webView2=0x7f0a0021;
     }
     public static final class layout {
         public static final int activity_editor=0x7f030000;
