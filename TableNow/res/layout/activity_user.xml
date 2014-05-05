@@ -8,15 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".User" >
 
-    <Spinner
-        android:id="@+id/settings_spinner_u"
-        android:layout_width="117dp"
-        android:layout_height="45dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:spinnerMode="dropdown"
-         />
-
     <EditText
         android:id="@+id/search_editText"
         android:layout_width="wrap_content"
@@ -30,7 +21,6 @@
         android:id="@+id/search_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/settings_spinner_u"
         android:layout_marginRight="19dp"
         android:layout_marginTop="64dp"
         android:layout_toLeftOf="@+id/search_button"
@@ -41,7 +31,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/settings_spinner_u"
         android:onClick="to_search"
         android:text="@string/Search_button" />
 

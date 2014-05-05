@@ -1,12 +1,16 @@
 package com.tablenow;
 
-import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 public class UserLayout extends Activity {
 
@@ -30,26 +34,56 @@ public class UserLayout extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.user_layout, menu);
-		return true;
+	    // Inflate the menu items for use in the action bar
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.actions, menu);
+	    return super.onCreateOptionsMenu(menu);
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			// This ID represents the Home or Up button. In the case of this
-			// activity, the Up button is shown. Use NavUtils to allow users
-			// to navigate up one level in the application structure. For
-			// more details, see the Navigation pattern on Android Design:
-			//
-			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
-			//
-			NavUtils.navigateUpFromSameTask(this);
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	        case R.id.action_sign_out:
+	        	AlertDialog.Builder alertDialog2 = new AlertDialog.Builder(
+        		        UserLayout.this);
+
+        		// Setting Dialog Title
+        		alertDialog2.setTitle("Warning");
+
+        		// Setting Dialog Message
+        		alertDialog2.setMessage("Are You Sure You Want To Sign Out?");
+
+        		// yes button
+        		alertDialog2.setPositiveButton("Yes",
+        		        new DialogInterface.OnClickListener() {
+        		            public void onClick(DialogInterface dialog, int which) {
+        		                // Write your code here to execute after dialog
+        		                Toast.makeText(getApplicationContext(),
+        		                        "You Have Signed Out", Toast.LENGTH_SHORT)
+        		                        .show();
+        		                startActivity(new Intent(UserLayout.this, MainActivity.class));
+        		            }
+        		        });
+        		
+        		// no button
+        		alertDialog2.setNegativeButton("No", 
+        				new DialogInterface.OnClickListener() {
+        					public void onClick(DialogInterface dialog, int which) {
+        						dialog.cancel();
+        			}
+        		});
+
+        		// Showing Alert Dialog
+        		alertDialog2.show();
+	            return true;
+	        case R.id.action_settings:
+	        	startActivity(new Intent(UserLayout.this, User_update.class));
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+
 	}
 
 }
