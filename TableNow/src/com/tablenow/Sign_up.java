@@ -6,13 +6,6 @@ import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
-import org.json.JSONObject;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -48,9 +41,6 @@ public class Sign_up extends Activity {
 	// url to create new product
     
     private static String url_create_User = "http://50.161.166.152/Restaurant/create_product.php";
- 
-    // JSON Node names
-    private static final String TAG_SUCCESS = "success";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

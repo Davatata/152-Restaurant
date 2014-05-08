@@ -1,11 +1,4 @@
 package com.tablenow;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -166,10 +159,7 @@ public class MainActivity extends Activity {
 	            
 	           
 	            
-	            String response = "";
-	            BufferedReader reader;
-	            
-	           
+	            String response = "";       
 	           
 	            
 	            List<NameValuePair> params = new ArrayList<NameValuePair>();
