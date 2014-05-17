@@ -22,6 +22,28 @@ import com.tablenow.User;
 
 @RunWith(RobolectricTestRunner.class)
 public class MainActivityTest {
+	
+	@Test
+	  public void onCreateOptionMenuTest() throws Exception {
+	    MainActivity activity = Robolectric.buildActivity(MainActivity.class).create().get();
+	    Menu menu=null;
+	    boolean result= activity.onCreateOptionsMenu(menu);
+	    assertThat(result, equalTo(true));
+	  }
+	 
+	 @Test
+	  public void loginButtonTest() throws Exception {
+	    MainActivity activity = Robolectric.buildActivity(MainActivity.class).create().get();
+
+	    Button pressMeButton = (Button) activity.findViewById(R.id.logInButton);
+
+	    pressMeButton.performClick();
+	    
+	    ShadowActivity shadowActivity = Robolectric.shadowOf(activity);
+   Intent startedIntent = shadowActivity.getNextStartedActivity();
+   ShadowIntent shadowIntent = Robolectric.shadowOf(startedIntent);
+	    assertThat(shadowIntent.getComponent().getClassName(), equalTo(MainActivity.class.getName()));
+	  }
 
 	  @Test
 	  public void clickingButton_shouldChangeToSigUpActivity() throws Exception {
