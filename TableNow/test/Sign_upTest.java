@@ -8,12 +8,14 @@ import org.robolectric.RobolectricTestRunner;
 import org.robolectric.shadows.ShadowActivity;
 import org.robolectric.shadows.ShadowEnvironment;
 import org.robolectric.shadows.ShadowIntent;
+import org.robolectric.tester.android.view.TestMenuItem;
 
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertThat;
 //import static org.robolectric.Robolectric.shadowOf;
 import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -58,6 +60,25 @@ public class Sign_upTest {
 		boolean ch = ((CheckBox) view).isChecked();
 	    assertEquals(false, ch);
 	  }
+	
+	@Test
+	  public void MenuItemCheck() throws Exception {
+		Sign_up activity=Robolectric.buildActivity(Sign_up.class).create().get();
+	    MenuItem item = new TestMenuItem() {
+		  public int getItemId() {
+		    return R.id.search_button;
+		  }
+		};
+
+		activity.onOptionsItemSelected(item);
+
+		ShadowActivity shadowActivity = Robolectric.shadowOf(activity);
+		Intent startedIntent = shadowActivity.getNextStartedActivity();
+		ShadowIntent shadowIntent = Robolectric.shadowOf(startedIntent);
+
+		assertThat(shadowIntent.getComponent().getClassName(), equalTo(Sign_up.class.getName()));
+	  }
+	
 	
 	
 }
