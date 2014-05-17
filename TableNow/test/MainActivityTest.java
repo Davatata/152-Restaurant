@@ -87,4 +87,6 @@ public class MainActivityTest {
         ShadowIntent shadowIntent = Robolectric.shadowOf(startedIntent);
 	    assertThat(shadowIntent.getComponent().getClassName(), equalTo(User.class.getName()));
 	  }
+	  
+	  
 }
