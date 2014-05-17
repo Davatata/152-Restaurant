@@ -10,6 +10,7 @@ import org.robolectric.shadows.ShadowIntent;
 import static org.junit.Assert.assertThat;
 //import static org.robolectric.Robolectric.shadowOf;
 import android.content.Intent;
+import android.view.Menu;
 import android.widget.Button;
 
 import com.tablenow.Editor;
